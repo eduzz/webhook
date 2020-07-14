@@ -71,6 +71,18 @@ trans_paidtime | Hhora de pagamento|String
 trans_paymentmethod | Forma de pagamento (Ver tabela de forma de pagamento)|Int
 trans_status | Status do pagamento (Ver tabela de status)|Int
 trans_value | Valor da venda|Float
+trans_items | Array contendo os itens da fatura como descrito abaixo|Array
+trans_items[][item_id] | Id do item | Int
+trans_items[][item_name] | Nome do item | String
+trans_items[][item_value] | Valor do item | Float
+trans_items[][item_coupon_code] | Código do cupom que foi aplicado no item, caso não tenha sido usado cupom, será nulo | String
+trans_items[][item_coupon_value] | Valor descontado do cupom no item | Float
+trans_items[][item_product_id] | ID do produtor do item | Int
+trans_items[][item_product_name] | Nome atual do produto do item | String
+trans_items[][item_product_refund] | Prazo em dias para reembolso do produto do item | Int
+trans_items[][item_product_sku_reference] | Referência externa do produto do item | String
+trans_items[][item_product_partner_cod] | Caso seja um produto de parceiro, contém o código dele | Int
+trans_items[][item_product_chargetype] | Contém o tipo da cobrança do produto, conforme tabela abaixo | String
 trans_items_quantity | Quantidade de itens da venda|Float
 trans_job_id | Id Ordem do serviço (Job) |Int
 trans_job_status | Id Status da ordem do serviço (Job) |Int
@@ -113,6 +125,15 @@ ID	| Forma de pagamento
 24 	| Elo
 25 	| Paypal Internacional
 27 	| Múltiplos Cartões
+
+## Tabela de tipos de cobrança de produto
+
+SIGLA   | Tipo
+-----   | ------
+N       | Cobrança única
+A       | Assinatura
+L       | Outros
+G       | Gratuita (Valor R$ 0,00)
 
 ## Tabela de status de contratos
 
