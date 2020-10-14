@@ -35,6 +35,8 @@ pro_document_number | Documento do produtor | String
 pro_email | E-mail do produtor | String
 pro_name | Nome do produtor | String
 pro_value | Valor da comissão do produtor | Float 
+pro_value | Valor da comissão do coprodutor | Float
+other_values | Taxas adicionais | Float
 product_cod | ID do produto | Int
 product_name | Nome do produto | String
 product_refund | Prazo em dias para reembolso do produto |  Int    
