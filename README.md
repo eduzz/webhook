@@ -106,14 +106,15 @@ ID  | Status | Descrição
 7 | Reembolsado | Cliente já foi reembolsado pela eduzz
 9 | Duplicada | Cliente tentou comprar mais de uma vez o mesmo produto, a segunda fatura fica como duplicada e não é cobrada.
 10 | Expirada | A fatura que fica mais de 15 dias aberta é alterada para expirada.
-11 | Em Recuperacao | Fatura entrou para o processo de recuperação
-15 | Aguardando Pagamento | Faturas de recorrência após o vencimento ficam com o status aguardando pagamento
+11 | Em Recuperacao | Fatura entrou para o processo de recuperação.
+15 | Aguardando Pagamento | Faturas de recorrência após o vencimento ficam com o status aguardando pagamento.
 
 ## Tabela de formas de pagamento
 ID	| Forma de pagamento
 ----	| -----
 1 	| Boleto Bancário
 9 	| Paypal
+11  | Cartão desconhecido
 13 	| Visa
 14	| Amex
 15 	| Mastercard
@@ -149,6 +150,7 @@ ID  | Status | Descrição
 7 | Atrasado | Contrato sem pagamento há mais de 3 dias após o vencimento.
 9 | Finalizado | Todos os pagamentos foram realizados. Não gera novas cobranças.
 10 | Trial | Contrato em período de trial.
+11 | Inadimplente | O cliente não está com os pagamentos em dia para esse contrato.
 
 
 
