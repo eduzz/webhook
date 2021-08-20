@@ -114,6 +114,7 @@ ID	| Forma de pagamento
 ----	| -----
 1 	| Boleto Bancário
 9 	| Paypal
+11 	| Desconhecido
 13 	| Visa
 14	| Amex
 15 	| Mastercard
