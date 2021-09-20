@@ -14,7 +14,7 @@ Para autenticar um **Webhook** na Eduzz, recomendamos o uso do campo chave de or
 
 A chave para integração com o webhook pode ser visualizada em nossa plataforma em: **[Secret key](https://orbita.eduzz.com/producer/config-api)**.
 
-Será enviado no payload do webhook no campo origin_secret esse campo.
+Será enviado no payload do webhook no campo origin esse campo.
 
 Ainda enviamos hoje o campo api_key por motivos de compatibilidade, porém, ele não deve mais ser utilizado e **será descontiunado em breve**, para acesso a nossa **[Api pública](https://api2.eduzz.com)** deve ser utilizado o campo **[Api key](https://orbita.eduzz.com/producer/config-api)**, porém, depois de gerado, o mesmo não poderá mais ser visualizado.
 
@@ -22,7 +22,7 @@ Ainda enviamos hoje o campo api_key por motivos de compatibilidade, porém, ele 
 
 Parâmetro     | Descrição	| Tipo de Variável
 ------------- | -------------	| -----------------
-origin_secret | **[Token](https://orbita.eduzz.com/producer/config-api)** de segurança do webhook | String
+origin | **[Token](https://orbita.eduzz.com/producer/config-api)** de segurança do webhook | String
 aff_cod | Id do afiliado | Int?
 aff_document_number | Documento do afiliado | String?
 aff_email | E-mail do afiliado | String?
@@ -188,7 +188,7 @@ $status = (object) [
     'waiting_payment' => 15
 ];
 
-if ($input->origin_secret == 'Token de segurança do webhook') {
+if ($input->origin == 'Token de segurança do webhook') {
     switch ($input->trans_status) {
         case $status->paid:
             // Pagou
