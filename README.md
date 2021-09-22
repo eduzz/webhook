@@ -12,7 +12,7 @@ Também na **[Tela de configuração de webhook](https://orbita.eduzz.com/produc
 
 Para autenticar um **Webhook** na Eduzz, recomendamos o uso do campo chave de origem, disponível tanto no webhook quanto no serviço de **[Entrega Customizada](https://github.eduzz.com/eduzz/delivery_custom)**.
 
-A chave para integração com o webhook pode ser visualizada em nossa plataforma em: **[Secret key](https://orbita.eduzz.com/producer/config-api)**.
+A chave para integração com o webhook pode ser visualizada em nossa plataforma no **[Órbita](https://orbita.eduzz.com/producer/config-api)**.
 
 Será enviado no payload do webhook no campo origin esse campo.
 
