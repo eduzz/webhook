@@ -32,6 +32,7 @@ O tipo **(invoice ou abandonment)** será enviado no campo **(type)**.
 
 Quando utilizando o webhook, para que você possa receber as duas integrações, é necessário cadastrar duas vezes a mesma url para os tipos de fatura e abandono.
 
+### Documentação dos campos e exemplos
 
 **[Documentação dos campos enviados no webhook de fatura](campos-fatura.md)**\
 **[Exemplo de código para receber webhook de fatura](exemplo-fatura.php)**
