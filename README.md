@@ -4,15 +4,9 @@ o webhook eduzz permite que você receba notificações sobre alguns eventos que
 
 ### Configurando uma nova integração
 
-Para configurar uma nova integração, basta conferir a tela de configuração de webhook no Órbita, lá, é possível cadastrar uma integração informando um nome, a url desejada, os dados de quais produtos devem serem disparados e qual o evento que você deseja receber.
+Para configurar uma nova integração, basta conferir a **[tela de configuração de webhook](https://orbita.eduzz.com/producer/webhook)** no Órbita, lá, é possível cadastrar uma integração informando um nome, a url desejada, os dados de quais produtos devem serem disparados e qual o evento que você deseja receber.
 
-
-
-Consideramos como **sucesso** todas as requisições que retornam o **[status HTTP 200](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)**.
-
-As configurações para o cadastro de webhooks e acesso ao histórico de envio de requests podem serem acessadas no **[Órbita](https://orbita.eduzz.com/producer/webhook)**.
-
-Também na **[Tela de configuração de webhook](https://orbita.eduzz.com/producer/webhook)** está disponível um histórico dos disparos.
+![Print do formulário de criação de url](./images/formulario_nova_url.png)
 
 ### Autenticação
 
@@ -48,46 +42,6 @@ Quando utilizando o webhook, para que você possa receber as duas integrações,
 **[Exemplo de código para receber webhook de abandono de carrinho](exemplo-abandono.php)**
 
 ---
-
-## Exemplo php de página para receber requests em PHP
-
-```php
-
-<?php
-
-$input = json_decode(file_get_contents('php://input'));
-$status = (object) [
-    'open' => 1,
-    'paid' => 3,
-    'cancelled' => 4,
-    'waitint_refund' => 6,
-    'refunded' => 7,
-    'expired' => 10,
-    'recovering' => 11,
-    'waiting_payment' => 15
-];
-
-if ($input->origin == 'Token de segurança do webhook') {
-    switch ($input->trans_status) {
-        case $status->paid:
-            // Pagou
-            libera_acesso();
-        break;
-        case $status->expired:
-            // Pagou
-            remove_acesso();
-        break;
-        case $status->refunded:   // Reembolsado
-            remove_acesso();
-        break;
-        default:
-            // Status desconhecido, provavalmente há algum problema com o corpo da request, verificar $_POST
-        break;
-    }
-} else {
-    // WEBHOOK NÃO AUTENTICADO PELA EDUZZ, PODE SER UMA TENTATIVA DE INVASÃO OU PROBLEMA COM O CORPO DA REQUISIÇÃO;
-}
-```
 
 ### Suporte
 
