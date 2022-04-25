@@ -25,10 +25,8 @@ type       | Tipo da integração (invoice ou abandonment) | string
 
 ### Eventos disponíveis
 
-Utilizando o webhook estão disponíveis os eventos de:
-    
-- Atualização de status de fatura e criação de contrato (invoice)
-- Abandono de carrinho (abandonment)
+- *Atualização de status de fatura e criação de contrato (invoice)*
+- *Abandono de carrinho (abandonment)*
 
 O tipo **(invoice || abandonment)** será enviado no campo de tipo do webhook **(type)**.
 
