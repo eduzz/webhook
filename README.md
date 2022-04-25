@@ -28,7 +28,7 @@ type       | Tipo da integração (invoice ou abandonment) | string
 - *Atualização de status de fatura e criação de contrato (invoice)*
 - *Abandono de carrinho (abandonment)*
 
-O tipo **(invoice \|\| abandonment)** será enviado no campo de tipo do webhook **(type)**.
+O tipo **(type=invoice ou abandonment)** será enviado no campo de tipo do webhook **(type)**.
 
 Quando utilizando o webhook, para que você possa receber as duas integrações, é necessário cadastrar duas vezes a mesma url para os tipos de fatura e abandono.
 
