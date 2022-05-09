@@ -37,7 +37,7 @@ Quando utilizando o webhook, para que você possa receber as duas integrações,
 **[Documentação dos campos enviados no webhook de fatura](campos-fatura.md)**\
 **[Exemplo de código para receber webhook de fatura](exemplo-fatura.php)**
 
-**[Documentação dos campos enviados no webhook de abandono](campos-abandono)**\
+**[Documentação dos campos enviados no webhook de abandono](campos-abandono.md)**\
 **[Exemplo de código para receber webhook de abandono de carrinho](exemplo-abandono.php)**
 
 ### Suporte
