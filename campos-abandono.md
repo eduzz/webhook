@@ -1,6 +1,6 @@
-# Documentação dos campos de fatura
+# Documentação dos campos enviados no evento de abandono de carrinho
 
-Para integrações de abandono, será enviado um evento contendo os campos abaixo, onde o evento representa um comprador que abandonou um carrinho antes da finalização da compra.
+Quando acontecer um evento de abandono de carrinho na plataforma do produtor, serão enviados os campos abaixo pertencentes ao carrinho que foi abandonado:
 
 Parâmetro | Descrição | Tipo
 --------- | --------- | ----

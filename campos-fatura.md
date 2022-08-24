@@ -1,6 +1,7 @@
-# Documentação dos campos de fatura
+# Documentação de eventos de alteração no status da fatura
 
-Para integrações de fatura, será enviado um evento contendo os campos abaixo, onde cada evento é o estado da fatura no momento.
+Para se integrar com eventos do tipo fatura, deve ser seguida a documentação abaixo.
+Ela descreve quais campos e quais tipos de dados serão enviados a url cadastrada.
 
 Os eventos são enviados toda vez que o status de uma fatura é atualizado (campo trans_status).
 
