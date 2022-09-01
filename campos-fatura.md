@@ -52,6 +52,13 @@ recurrence_status | Id do [Status do contrato](#tabela de status de contratos) c
 recurrence_status_name | Nome do status do contrato | String?    
 recurrence_type | Indica se é a assinatura 2.0 | String?
 sku_reference | Referência externa | String
+student_cod | Código do aluno | Int?
+student_taxnumber | Documento do aluno | String?
+student_name | Nome do aluno | String?
+student_email | E-mail do aluno | String?
+student_tel | Telefone do aluno | String?
+student_tel2 | Segundo telefone do aluno | String?
+student_cel | Celular do aluno | String?
 tracker_trk |  Parâmetro genérico 1 | String?
 tracker_trk2 | Parâmetro genérico 2 | String?
 tracker_trk3 | Parâmetro genérico 3 | String?
