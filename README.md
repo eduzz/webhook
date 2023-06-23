@@ -40,11 +40,11 @@ contract | Um evento de alteração do status de um contrato ou a criação de u
 
 ## Documentação dos campos e exemplos :page_with_curl:
 
-### **[Documentação dos campos enviados no webhook de fatura e contrato](campos-fatura.md)**\
-**[Exemplo de código para receber webhook de fatura e contrato](exemplo-fatura.php)**
+### **[Documentação dos campos enviados no webhook de fatura e contrato](campos-fatura.md)**
+#### **[Exemplo de código para receber webhook de fatura e contrato](exemplo-fatura.php)**
 
-### **[Documentação dos campos enviados no webhook de abandono](campos-abandono.md)**\
-**[Exemplo de código para receber webhook de abandono de carrinho](exemplo-abandono.php)**
+### **[Documentação dos campos enviados no webhook de abandono](campos-abandono.md)**
+#### **[Exemplo de código para receber webhook de abandono de carrinho](exemplo-abandono.php)**
 
 ## Suporte
 

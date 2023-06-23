@@ -193,10 +193,10 @@ Caso continue falhando após os 5 dias, a URL será desativada, os eventos salvo
 
 ## Documentação dos campos e exemplos :page_with_curl:
 
-**[Documentação dos campos enviados no webhook de fatura e contrato](campos-fatura.md)**\
+**[Documentação dos campos enviados no webhook de fatura e contrato](campos-fatura.md)**
 **[Exemplo de código para receber webhook de fatura e contrato](exemplo-fatura.php)**
 
-**[Documentação dos campos enviados no webhook de abandono](campos-abandono.md)**\
+**[Documentação dos campos enviados no webhook de abandono](campos-abandono.md)**
 **[Exemplo de código para receber webhook de abandono de carrinho](exemplo-abandono.php)**
 
 ## Suporte
