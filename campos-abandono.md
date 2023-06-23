@@ -1,4 +1,4 @@
-# Documentação dos campos enviados no evento de abandono de carrinho
+# Documentação dos campos enviados no evento de abandono de carrinho :page_with_curl:
 
 Quando acontecer um evento de abandono de carrinho na plataforma do produtor, serão enviados os campos abaixo pertencentes ao carrinho que foi abandonado:
 
