@@ -1,4 +1,4 @@
-# Documentação de eventos de alteração no status da fatura
+# Documentação de eventos de alteração no status da fatura :page_with_curl:
 
 Para se integrar com eventos do tipo fatura, deve ser seguida a documentação abaixo.
 Ela descreve quais campos e quais tipos de dados serão enviados a url cadastrada.
@@ -14,7 +14,7 @@ aff_document_number | Documento do afiliado | String?
 aff_email | E-mail do afiliado | String?
 aff_name |  Nome do afiliado | String?
 aff_value | Valor da comissão do afiliado | Float?
-billet_url | Página com a chave gerada para o produto | String   
+billet_url | Página com a chave gerada para o produto | String
 cus_address | Endereço do cliente | String
 cus_address_city | Cidade do cliente | String
 cus_address_comp | Complemento do endereço do cliente | String
@@ -36,28 +36,37 @@ pro_document_number | Documento do produtor | String
 pro_email | E-mail do produtor | String
 pro_name | Nome do produtor | String
 pro_value | Valor da comissão do produtor | Float
+origin_secret | **[Token](https://orbita.eduzz.com/producer/config-api)** de segurança do webhook | string
 cop_value | Valor da comissão do coprodutor | Float?
+partner_cod | Id do parceiro do primeiro Item | Number?
 other_values | Taxas adicionais | Float?
 product_cod | ID do produto | Int
 product_name | Nome do produto | String
 product_refund | Prazo em dias para reembolso do produto |  Int
 product_parent_cod | ID do produto pai (apenas para variações) | Int?
 discount_coupon_code | Código do Cupom de Desconto utilizado (ou Vazio caso não utilizou) | String?
+trans_bankslip | Url para acesso ao boleto caso seja um pagamento via boleto | String
 recurrence_cod | Id do contrato | Int?
+type | Tipo da integração (invoice, contract ou abandonment) | String
 recurrence_count | Quantidade de cobranças já realizadas | Int?
 recurrence_interval | Intervalo da recorrencia | Int?
 recurrence_interval_type | Tipo de intervalo (Caso o campo **recurrence_interval** sejá 1 e o campo atual for 'month', significa que a cobrança é feita 1 vez ao mês, valores possíveis: day (Cobrança diária), month (Mensal), Year (Anual) | String?
+recurrence_first_payment | Informa ao cliente se aquele contrato é o evento de criação do contrato (primeiro pagamento) | Number
 recurrence_plan | Nome do plano da recorrencia | String?
 recurrence_startdate | Data de inicio da cobrança | String?
 recurrence_status | Id do [Status do contrato](#tabela de status de contratos) caso seja recorrência  | Int?
-recurrence_status_name | Nome do status do contrato | String?    
+recurrence_status_name | Nome do status do contrato | String?
 recurrence_type | Indica se é a assinatura 2.0 | String?
+recurrence_canceled_at | Caso a assinatura esteja cancelada indica a data de cancelamento | String?
 sku_reference | Referência externa | String
+refund_date | Caso a fatura esteja reembolsada informada a data | String
 student_cod | Código do aluno | Int?
 student_taxnumber | Documento do aluno | String?
 student_name | Nome do aluno | String?
 student_email | E-mail do aluno | String?
+pro_cod | Id do Produtor | Number?
 student_tel | Telefone do aluno | String?
+notification_url | Url de postback caso existente | String?
 student_tel2 | Segundo telefone do aluno | String?
 student_cel | Celular do aluno | String?
 tracker_trk |  Parâmetro genérico 1 | String?
@@ -68,7 +77,7 @@ tracker_utm_content | UTM Content | String?
 tracker_utm_medium | UTM Medium | String?
 tracker_utm_source | UTM Source | String?
 trans_barcode | codigo de barra do boleto|String?
-trans_cod | Id da fatura|Int
+trans_cod | Id da fatura | Int
 trans_createdate | Data de criação da fatura | String
 trans_createtime | Hora de criação da fatura | String
 trans_currency | Moeda utilizada na transação|String
@@ -99,14 +108,14 @@ trans_job_id | Id Ordem do serviço (Job) |Int?
 trans_job_status | Id Status da ordem do serviço (Job) |Int?
 *api_key* | *Token antigo segurança do produtor ou afiliado apenas para motivos de referência **(será descontinuado em breve)*** | *String*
 
-## Tabela de status de faturas
+## Tabela de status de faturas :bookmark_tabs:
 
 Campo: **trans_status**
 
 ID  | Status | Descrição
 --- | ------ | -----------
-1 | Aberta | Fatura aberta, cliente gerou boleto, mas ainda não foi compensado 
-3 | Paga | Compra foi paga, o cliente já esta apto a receber o produto 
+1 | Aberta | Fatura aberta, cliente gerou boleto, mas ainda não foi compensado
+3 | Paga | Compra foi paga, o cliente já esta apto a receber o produto
 4 | Cancelada | Fatura Cancelada pela Eduzz
 6 | Aguardando Reembolso | Cliente solicitou reembolso, porem o mesmo ainda não foi efetuado
 7 | Reembolsado | Cliente já foi reembolsado pela eduzz
@@ -115,7 +124,7 @@ ID  | Status | Descrição
 11 | Em Recuperacao | Fatura entrou para o processo de recuperação
 15 | Aguardando Pagamento | Faturas de recorrência após o vencimento ficam com o status aguardando pagamento
 
-## Tabela de formas de pagamento
+## Tabela de formas de pagamento :bookmark_tabs:
 
 Campo: **trans_paymentmethod**
 
@@ -139,7 +148,7 @@ ID	| Forma de pagamento
 27 	| Múltiplos Cartões
 32  | PIX
 
-## Tabela de tipos de cobrança de produto
+## Tabela de tipos de cobrança de produto :bookmark_tabs:
 
 Campo: **item_product_chargetype**
 
@@ -150,13 +159,13 @@ A       | Assinatura
 L       | Outros
 G       | Gratuita (Valor R$ 0,00)
 
-## Tabela de status de contratos
+## Tabela de status de contratos :bookmark_tabs:
 
 Campo: **recurrence_status**
 
 ID  | Status | Descrição
 --- | ------ | -----------
-1 | Em Dia | Contrato com pagamento em dia. 
+1 | Em Dia | Contrato com pagamento em dia.
 2 | Aguardando Pagamento | Esse status é acionado após o vencimento da fatura. Permanece por 3 dias.
 3 | Suspenso | O contrato não gera novas cobranças. Pode ser reativado.
 4 | Cancelado | O contrato do cliente foi cancelado.
