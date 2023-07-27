@@ -21,7 +21,7 @@ cus_address_comp | Complemento do endereço do cliente | String
 cus_address_country | País do cliente | String
 cus_address_district | Bairro do cliente | String
 cus_address_number | Numero do endereço do cliente | String
-cus_address_state | Estado do clieente | String
+cus_address_state | Estado do cliente | String
 cus_address_zip_code | CEP do cliente | String
 cus_cel | Celular do cliente | String
 cus_tel | Telefone do cliente | String
