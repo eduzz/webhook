@@ -1,4 +1,4 @@
-# Documentação de eventos de alteração no status da fatura :page_with_curl:
+# Documentação de eventos de alteração no status da fatura
 
 Para se integrar com eventos do tipo fatura, deve ser seguida a documentação abaixo.
 Ela descreve quais campos e quais tipos de dados serão enviados a url cadastrada.
@@ -21,7 +21,7 @@ cus_address_comp | Complemento do endereço do cliente | String
 cus_address_country | País do cliente | String
 cus_address_district | Bairro do cliente | String
 cus_address_number | Numero do endereço do cliente | String
-cus_address_state | Estado do cliente | String
+cus_address_state | Estado do clieente | String
 cus_address_zip_code | CEP do cliente | String
 cus_cel | Celular do cliente | String
 cus_tel | Telefone do cliente | String
@@ -78,6 +78,7 @@ tracker_utm_medium | UTM Medium | String?
 tracker_utm_source | UTM Source | String?
 trans_barcode | codigo de barra do boleto|String?
 trans_cod | Id da fatura | Int
+event_name | Nom do evento que foi enviado (cart_abandonment) | String
 trans_createdate | Data de criação da fatura | String
 trans_createtime | Hora de criação da fatura | String
 trans_currency | Moeda utilizada na transação|String
@@ -89,6 +90,8 @@ trans_paid | Valor pago |Float
 trans_paiddate | Data ddo pagamento | String?
 trans_paidtime | Hora de pagamento | String?
 trans_paymentmethod | [Forma de pagamento](#tabela-de-formas-de-pagamento) | Int?
+trans_recovered | Fatura foi recuperada | Boolean
+trans_recovery_url | Link de recuperação | String
 trans_status | [Status da fatura](#tabela-de-status-de-faturas) | Int
 trans_value | Valor da venda | Float?
 trans_items | Array contendo os itens da fatura como descrito abaixo|Array
@@ -107,8 +110,43 @@ trans_items_quantity | Quantidade de itens da venda|Float
 trans_job_id | Id Ordem do serviço (Job) |Int?
 trans_job_status | Id Status da ordem do serviço (Job) |Int?
 *api_key* | *Token antigo segurança do produtor ou afiliado apenas para motivos de referência **(será descontinuado em breve)*** | *String*
+event_name | Nome do evento que foi enviado | String
 
-## Tabela de status de faturas :bookmark_tabs:
+## Tabela de Nomes de Eventos (event_name)
+
+**Fatura**
+
+event_name | Momento do envio
+--- | ---
+invoice_open | Quando uma fatura é aberta (boleto é gerado ou uma nova transação de contrato é gerada)
+invoice_processing | Fatura Está em processamento
+invoice_paid | Fatura está pagada
+invoice_canceled | Fatura está cancelada
+invoice_waiting_documents | Fatura está aguardando os documentos para processo de reembolso
+invoice_waiting_refund | Reembolso foi aprovado e a fatura está agurdando ser reembolsada
+invoice_refunded | Fatura foi reembolsada
+invoice_analysing | Fatura está em análise
+invoice_duplicated | Fatura foi identificada como duplicada e foi cancelada
+invoice_expired | Data de pagamento da fatura expirou
+invoice_recovering | Fatura entrou em recuperação de Vendas
+invoice_trial | Fatura entrou em modo de trial
+invoice_deleted | Fatura foi excluída, contatar time de Suporte
+invoice_waiting_payment | Fatura está aguardando pagamento
+invoice_refused | Cartão de crédito recusado no meio de pagamento
+invoice_overdue | Fatura expirou
+invoice_scheduled | Fatura está agendada para alguma data específica
+invoice_negociated | Fatura entrou em disputa pelo cliente
+contract_up_to_date | Enviado quando o contrato está em dia (foi pago e processado corretamente no último pagamento)
+contract_waiting_payment | Contrato está aguardando o pagamento da parcela atual
+contract_suspended | Contrato foi suspenso pela Eduzz ou produtor
+contract_canceled | Contrato foi cancelado pela Eduzz ou produtor
+contract_delayed | Contrato será processado no futuro
+contract_finished | Contrato encerrado
+contract_trial | Contrato entrou em modo trial
+contract_overdue | Contrato entrou em atraso
+contract_free | Contrato é gratuito
+
+## Tabela de status de faturas
 
 Campo: **trans_status**
 
@@ -124,7 +162,7 @@ ID  | Status | Descrição
 11 | Em Recuperacao | Fatura entrou para o processo de recuperação
 15 | Aguardando Pagamento | Faturas de recorrência após o vencimento ficam com o status aguardando pagamento
 
-## Tabela de formas de pagamento :bookmark_tabs:
+## Tabela de formas de pagamento
 
 Campo: **trans_paymentmethod**
 
@@ -148,7 +186,7 @@ ID	| Forma de pagamento
 27 	| Múltiplos Cartões
 32  | PIX
 
-## Tabela de tipos de cobrança de produto :bookmark_tabs:
+## Tabela de tipos de cobrança de produto
 
 Campo: **item_product_chargetype**
 
@@ -159,7 +197,7 @@ A       | Assinatura
 L       | Outros
 G       | Gratuita (Valor R$ 0,00)
 
-## Tabela de status de contratos :bookmark_tabs:
+## Tabela de status de contratos
 
 Campo: **recurrence_status**
 

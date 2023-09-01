@@ -1,4 +1,4 @@
-# Documentação dos campos enviados no evento de abandono de carrinho :page_with_curl:
+# Documentação dos campos enviados no evento de abandono de carrinho
 
 Quando acontecer um evento de abandono de carrinho na plataforma do produtor, serão enviados os campos abaixo pertencentes ao carrinho que foi abandonado:
 
@@ -16,3 +16,4 @@ affiliate.name | Nome do affiliado | String?
 customer.name | Nome do comprador | String
 customer.email | E-mail do comprador | String
 customer.phone | Telefone do comprador | String
+event_name | Nome do evento que foi enviado (cart_abandonment) | String
