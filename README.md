@@ -115,7 +115,7 @@ cart_abandonment | Toda vez que um cliente preenche os dados no checkout e aband
 
 ## Autenticação
 
-Para autenticar um **[Webhook](https://orbita.eduzz.com/producer/webhook)** na Eduzz, recomendamos o uso do campo chave de origem, disponível tanto no **[Webhook](https://orbita.eduzz.com/producer/webhook)** quanto no serviço de **[Entrega Customizada](https://github.eduzz.com/eduzz/delivery_custom)**.
+Para autenticar um **[Webhook](https://orbita.eduzz.com/producer/webhook)** na Eduzz, recomendamos o uso do campo chave de origem, disponível tanto no **[Webhook](https://orbita.eduzz.com/producer/webhook)** quanto no serviço de **[Entrega Customizada](https://github.com/eduzz/custom-delivery)**.
 
 A chave para integração com o webhook pode ser visualizada em nossa plataforma no **[Órbita](https://orbita.eduzz.com/producer/config-api)**, ela será enviada no campo origin no payload do webhook.
 
