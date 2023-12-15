@@ -58,6 +58,8 @@ recurrence_status | Id do [Status do contrato](#tabela de status de contratos) c
 recurrence_status_name | Nome do status do contrato | String?
 recurrence_type | Indica se é a assinatura 2.0 | String?
 recurrence_canceled_at | Caso a assinatura esteja cancelada indica a data de cancelamento | String?
+recurrence_finishes_at | Data final do contrato | String?
+recurrence_is_infinite | O contrato é infinito? | Boolean
 sku_reference | Referência externa | String
 refund_date | Caso a fatura esteja reembolsada informada a data | String
 student_cod | Código do aluno | Int?
