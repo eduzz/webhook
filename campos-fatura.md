@@ -147,6 +147,7 @@ contract_finished | Contrato encerrado
 contract_trial | Contrato entrou em modo trial
 contract_overdue | Contrato entrou em atraso
 contract_free | Contrato é gratuito
+contract_next_charge | Data da próxima cobrança do contrato
 
 ## Tabela de status de faturas
 
