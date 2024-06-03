@@ -1,6 +1,8 @@
-# Webhook Eduzz
+# Webhook Eduzz (Obsoleto)
 
-O Webhook da Eduzz permite que você receba notificações sobre alguns eventos das suas vendas.
+> **Atenção!**
+> Essa versão do webhook deixará de funcionar em breve!.
+> A Eduzz já lançou uma nova versão do sistema de webhooks. Mais moderna, confiável e eficiente. **[Acesse a documentação aqui](https://developers.eduzz.com/)**
 
 ## Configurando uma nova integração
 
